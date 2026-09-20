@@ -11,3 +11,12 @@ test/sim_build
 test/__pycache__/
 test/results.xml
 test/gate_level_netlist.v
+
+
+
+# Claude and other ai tools
+.claude/*
+CLAUDE.md
+AGENTS.md
+# Local python env
+.venv/

@@ -1,23 +1,26 @@
 # Tiny Tapeout project information
 project:
-  title:        ""      # Project title
-  author:       ""      # Your name
+  title:        "Protocol Emulator"      # Project title
+  author:       "Felix Ouimet"      # Your name
   discord:      ""      # Your discord username, for communication and automatically assigning you a Tapeout role (optional)
-  description:  ""      # One line description of what your project does
+  description:  "Firmware-programmable protocol engines emulating UART, SPI and I2C and more"      # One line description of what your project does
   language:     "Verilog" # other examples include SystemVerilog, Amaranth, VHDL, etc
-  clock_hz:     0       # Clock frequency in Hz (or 0 if not applicable)
+  clock_hz:     50000000       # Clock frequency in Hz (or 0 if not applicable)
 
-  # How many tiles your design occupies? A single tile is about 167x108 uM.
-  tiles: "1x1"          # Valid values: 1x1, 1x2, 2x2, 3x2, 4x2, 6x2 or 8x2
+  # How many tiles your design occupies? On ihp-sg13g2 a tile is 202.08 x 154.98 uM.
+  # Valid values (per tt-support-tools/tech/ihp-sg13g2/tile_sizes.yaml):
+  #   1x1 1x2 2x1 2x2 3x1 3x2 3x4 4x1 4x2 4x4 5x4 6x1 6x2 6x4 8x1 8x2 8x4
+  # Plan: 1x1 through M2, 4x2 at M3 (first submittable), 6x4 from M4 on.
+  tiles: "1x1"
 
   # Your top module name must start with "tt_um_". Make it unique by including your github username:
-  top_module:  "tt_um_example"
+  top_module:  "tt_um_fouimet"
 
   # List your project's source files here.
   # Source files must be in ./src and you must list each source file separately, one per line.
   # Don't forget to also update `PROJECT_SOURCES` in test/Makefile.
   source_files:
-    - "project.v"
+    - "project_top.v"
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
