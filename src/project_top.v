@@ -25,8 +25,8 @@ module tt_um_fouimet (
 reg [1:0] state, next_state;
 
 localparam IDLE = 2'b00;
-localparam RUN = 2'b01; //ideally 1 state per instruction, fetch next while exec 
-localparam DONE = 2'b11;
+localparam RUN = 2'b01; // ideally 1 state per instruction, fetch next while exec another etc.
+localparam DONE = 2'b11; // end of firmware
 
 //=========================================
 
