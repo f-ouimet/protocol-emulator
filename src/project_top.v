@@ -16,6 +16,22 @@ module tt_um_fouimet (
     input  wire       rst_n     // reset_n - low to reset
 );
 
+// Instruction Register ==================
+
+//========================================
+
+// states ================================
+
+reg [1:0] state, next_state;
+
+localparam IDLE = 2'b00;
+localparam RUN = 2'b01; //ideally 1 state per instruction, fetch next while exec 
+localparam DONE = 2'b11;
+
+//=========================================
+
+/************************************************************************************
+  TINYTAPEOUT EXAMPLE --
   // All output pins must be assigned. If not used, assign to 0.
   assign uo_out  = ui_in + uio_in;  // Example: ou_out is the sum of ui_in and uio_in
   assign uio_out = 0;
@@ -23,7 +39,20 @@ module tt_um_fouimet (
 
   // List all unused inputs to prevent warnings
   wire _unused = &{ena, clk, rst_n, 1'b0};
+  --
+*************************************************************************************/
 
-  //States
+// Core logic loop
+
+always @(posedge clk or negedge rst_n) begin
+  if (!rst_n) begin
+    //clear all outputs/rw, keep instruction memory?
+  end
+  else begin
+
+  end
+  
+end
+
 
 endmodule
